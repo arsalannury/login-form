@@ -1,0 +1,184 @@
+$bor:"border-radius";
+$style-map:(
+font-size:1.2em
+);
+$WI:"width";
+$bg-color:#f6f6f6;
+$bg-color2:#ff0a54;
+$bg-color3:#ffb703;
+$bg-color4:#fb8500;
+$bg-color5:#014f86;
+$text-color:#444;
+$text-color2:#7b2cbf;
+$border1:1px solid #333;
+$border2:2px solid $bg-color4;
+$bg-color-main:#9d4edd;
+@mixin tran($tran...) {
+    transition:$tran ;
+}
+@mixin display(){
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@mixin img(){
+    width: 20%;
+    height: auto;
+    border-radius: 50%;
+    border: $border2;
+}
+@mixin img2 {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    border: $border2;
+}
+@mixin input-style() {
+    outline: none;
+    border: none;
+    border-radius:8px;
+    box-shadow:2px 3px 3px 0 #7b2cbf;
+    border-radius: 66px;
+    border-radius: 50px;
+    padding: 3px 10px;
+    color: $text-color;
+    font-size: 0.9em;
+    &:hover{
+        font-size: 0.8em;
+       cursor: pointer;
+    }
+}
+@mixin shadow {
+    box-shadow:1px 5px 4px 0 #000 ;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    max-width: 1300px;
+    font-family:cursive;
+    font-size: 16px;
+}
+@mixin animate($anime...) {
+    animation: $anime
+}
+
+body{
+    overflow: hidden;
+    @include tran(opacity 8s ease-in);
+    position: relative;
+    &:hover{
+       opacity: 80%;
+    }
+  background-color:$bg-color-main;
+  font-size: 1em;
+  .logo-main{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      #{$WI}:30%;
+     opacity: 80%;
+     @include animate(sun 3s infinite)
+      
+  }
+}
+@keyframes sun{
+    from{#{$WI}:30%}
+    to{#{$WI}:32%}
+}
+.login-body{
+    margin: 13% 35%;
+  @include display();
+//   border: $border1;  
+   
+  padding: 10px; 
+  background-color:$bg-color;
+ #{$bor}:20px ;
+ @include shadow;
+  img{
+     @include img();
+     padding: 1px;
+     
+  } 
+  h1{
+      margin: 15px 0;
+      word-spacing: 4px;
+      font-size:map-get($map: $style-map, $key:font-size );
+      
+      &::first-letter{
+          color: $bg-color4;
+          margin-right: 2px;  
+      }
+  }
+  p{
+      margin-top: 20px;
+    //   word-spacing: 10px
+      
+  }
+}
+form{
+   @include display();
+   label{
+       margin: 5px 0;
+       
+   }
+   input{
+   @include input-style()
+   
+   }
+   .submit{
+       margin-top: 18px;
+       padding: 5px 15px;
+   }
+}
+//resvonsive style page//
+
+@media screen and (max-width:1024px){
+    .section-login{
+        //    margin: 40% auto auto auto;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+          
+       }
+       p{
+        text-align: center;
+        // word-spacing: 25px;
+    }
+    .login-body img{
+        @include img2
+     }
+     .logo-main{
+         display: block;
+        margin-top: 125px;
+        margin-left: -10px;
+    }
+}
+@media screen and (max-width:500px){
+  
+    .section-login{
+     //    margin: 40% auto auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+   .logo-main{
+       display: none;
+   }
+     .login-body{
+         height: 400px;
+          
+ }
+ p{
+     text-align: center;
+ }
+ .login-body img{
+    @include img2
+ }
+ }    

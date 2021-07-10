@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  max-width: 1300px;
+  font-family: cursive;
+  font-size: 16px;
+}
+
+body {
+  overflow: hidden;
+  transition: opacity 8s ease-in;
+  position: relative;
+  background-color: #9d4edd;
+  font-size: 1em;
+}
+
+body:hover {
+  opacity: 80%;
+}
+
+body .logo-main {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 30%;
+  opacity: 80%;
+  animation: sun 3s infinite;
+}
+
+@keyframes sun {
+  from {
+    width: 30%;
+  }
+  to {
+    width: 32%;
+  }
+}
+
+.login-body {
+  margin: 13% 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  box-shadow: 1px 5px 4px 0 #000;
+}
+
+.login-body img {
+  width: 20%;
+  height: auto;
+  border-radius: 50%;
+  border: 2px solid #fb8500;
+  padding: 1px;
+}
+
+.login-body h1 {
+  margin: 15px 0;
+  word-spacing: 4px;
+  font-size: 1.2em;
+}
+
+.login-body h1::first-letter {
+  color: #fb8500;
+  margin-right: 2px;
+}
+
+.login-body p {
+  margin-top: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form label {
+  margin: 5px 0;
+}
+
+form input {
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 2px 3px 3px 0 #7b2cbf;
+  border-radius: 66px;
+  border-radius: 50px;
+  padding: 3px 10px;
+  color: #444;
+  font-size: 0.9em;
+}
+
+form input:hover {
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+form .submit {
+  margin-top: 18px;
+  padding: 5px 15px;
+}
+
+@media screen and (max-width: 1024px) {
+  .section-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  p {
+    text-align: center;
+  }
+  .login-body img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #fb8500;
+  }
+  .logo-main {
+    display: block;
+    margin-top: 125px;
+    margin-left: -10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo-main {
+    display: none;
+  }
+  .login-body {
+    height: 400px;
+  }
+  p {
+    text-align: center;
+  }
+  .login-body img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #fb8500;
+  }
+}
+/*# sourceMappingURL=style.css.map */
